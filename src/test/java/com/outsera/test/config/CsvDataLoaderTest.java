@@ -73,4 +73,16 @@ class CsvDataLoaderTest {
         assertEquals("Producer A", result.get(0));
         assertEquals("Producer B", result.get(1));
     }
+
+    @Test
+    @DisplayName("Deve extrair Matthew Vaughn corretamente da lista complexa de 2015")
+    void testComplexStringWithMatthewVaughn() {
+        String input = "Simon Kinberg, Matthew Vaughn, Hutch Parker, Robert Kulzer and Gregory Goodman";
+        List<String> result = csvDataLoader.parseMultipleValues(input);
+        System.out.println("Nomes extraídos: " + result);
+        assertTrue(result.contains("Matthew Vaughn"), "Deveria conter Matthew Vaughn");
+        assertTrue(result.contains("Simon Kinberg"), "Deveria conter Simon Kinberg");
+        assertTrue(result.contains("Gregory Goodman"), "Deveria conter Gregory Goodman");
+        assertEquals(5, result.size(), "Deveriam ser 5 produtores");
+    }
 }

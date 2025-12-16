@@ -74,6 +74,8 @@ public class MovieService {
                 .filter(i -> i.getInterval() == maxInterval)
                 .toList();
 
+
+
         return MinMaxIntervalDTO.builder()
                 .min(minList)
                 .max(maxList)

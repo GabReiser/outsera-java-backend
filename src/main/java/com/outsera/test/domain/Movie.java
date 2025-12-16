@@ -16,6 +16,8 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "\"year\"")
     private Integer year;
     private String title;
     private boolean winner;
